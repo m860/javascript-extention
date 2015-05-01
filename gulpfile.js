@@ -24,9 +24,11 @@ var banner = [
 gulp.task("buildTo:angularAMD-empty", function (cb) {
     return gulp.src([
         path.join(root, "src/Array.prototype.each.js")
+        ,path.join(root, "src/Function.prototype.bind.js")
     ])
         .pipe(concat("jsext.js"))
-        //.pipe(uglify())
+        .pipe(uglify())
+        .pipe(header(banner))
         .pipe(gulp.dest(path.join(root, "../angularAMD-empty/app/js/lib/")));
 });
 
