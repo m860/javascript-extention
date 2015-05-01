@@ -16,8 +16,15 @@ gulp.task("buildTo:angularAMD-empty", function (cb) {
         path.join(root, "src/Array.prototype.each.js")
     ])
         .pipe(concat("jsext.js"))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(path.join(root, "../angularAMD-empty/app/js/lib/")));
+});
+
+gulp.task("build", function (cb) {
+    return gulp.src(root + "src/**")
+        .pipe(concat("jsext.min.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.join(root, "dist")));
 });
 
 gulp.task("watch:src", function (cb) {
@@ -33,5 +40,6 @@ gulp.task("watch:src", function (cb) {
 
 gulp.task("default", [
     "buildTo:angularAMD-empty"
+    , "build"
     , "watch:src"
 ]);
