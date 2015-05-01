@@ -26,10 +26,10 @@ gulp.task("buildTo:angularAMD-empty", function (cb) {
         path.join(root, "src/Array.prototype.each.js")
         ,path.join(root, "src/Function.prototype.bind.js")
     ])
-        .pipe(concat("jsext.js"))
+        .pipe(concat("jsext.min.js"))
         .pipe(uglify())
         .pipe(header(banner))
-        .pipe(gulp.dest(path.join(root, "../angularAMD-empty/app/js/lib/")));
+        .pipe(gulp.dest(path.join(root, "../angularAMD-empty/app/js/")));
 });
 
 gulp.task("build", function (cb) {
