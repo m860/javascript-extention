@@ -21,15 +21,15 @@ var banner = [
     , "*/\n"
 ].join("\n");
 
-gulp.task("buildTo:angularAMD-empty", function (cb) {
+gulp.task("buildTo:angularAMD-template", function (cb) {
     return gulp.src([
         path.join(root, "src/Array.prototype.each.js")
         ,path.join(root, "src/Function.prototype.bind.js")
     ])
-        .pipe(concat("jsext.min.js"))
-        .pipe(uglify())
+        .pipe(concat("jsext.js"))
+        //.pipe(uglify())
         .pipe(header(banner))
-        .pipe(gulp.dest(path.join(root, "../angularAMD-empty/app/js/")));
+        .pipe(gulp.dest(path.join(root, "../angularAMD-template/app/js/")));
 });
 
 gulp.task("build", function (cb) {
@@ -53,7 +53,7 @@ gulp.task("watch:src", function (cb) {
 });
 
 gulp.task("default", [
-    "buildTo:angularAMD-empty"
+    "buildTo:angularAMD-template"
     , "build"
     , "watch:src"
 ]);
