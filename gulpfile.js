@@ -25,6 +25,7 @@ gulp.task("buildTo:angularAMD-template", function (cb) {
     return gulp.src([
         path.join(root, "src/Array.prototype.each.js")
         ,path.join(root, "src/Function.prototype.bind.js")
+        ,path.join(root, "src/Array.prototype.find.js")
     ])
         .pipe(concat("jsext.js"))
         //.pipe(uglify())
