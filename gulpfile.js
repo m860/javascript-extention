@@ -8,6 +8,8 @@ var gulp = require("gulp")
     , dateFormat = require('dateformat')
     , path = require("path");
 
+require(path.join(__dirname,"gulp-test"));
+
 
 var root = __dirname + "/";
 console.log("root : %s", root);

@@ -8,7 +8,7 @@ else {
         if (!url) url = window.location.href;
         var data = {};
         var index = url.indexOf("?");
-        var qstr = url.substring(index);
+        var qstr = url.substring(index+1);
         var strs = qstr.split("&");
         var kv;
         for (var i = 0; i < strs.length; i++) {
